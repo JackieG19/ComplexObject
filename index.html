@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Rentopia</h1>
+    <h2 id="companyName"></h2>
+    
+    <form id="reservationForm">
+        
+        <div id="carSelect">
+            <div id="carSelect">
+                <label>Type of Car</label>
+                <select id="dropdown" onclick="myFunction()"></select>
+            </div>
+        </div>
+        
+        <div id="carInfo">
+            <h4>Informantion</h4>
+            <p>Available: <span id="available" ></span></p>
+            <p>Price: <span id="price"></span></p>
+        </div><!--car Info-->
+        
+        <div id="confirmationSection">
+            <input type="checkbox" name="confirm" id="confirmation">
+            <label>I agree to Terms and Conditions</label>
+        </div><!--confirmation Section-->
+        
+        <br>
+        
+        <button type="submit">Submit</button>
+        
+    </form>
+    
+    <script src="script.js"></script>
+</body>
+</html>
