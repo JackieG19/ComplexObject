@@ -1,6 +1,6 @@
 var rent = {
             cars: [
-                {
+                {//objects
                     name: "Economy", // car type 1
                     price: "$75 per day",
                     available: 40
@@ -27,25 +27,25 @@ var rent = {
 };
  
 
-function myFunction(car) {
-    document.getElementById("price").innerHTML = rent.cars[car].price;
-    document.getElementById("available").innerHTML = rent.cars[car].available;
-}
+
 
 for (var i = 0; i < rent.cars.length; i++){
     var option = document.createElement("OPTION");
     var carTp = document.createElement("LABEL");
-    document.getElementById("dropdown").appendChild(option);
-    //option.setAttribute("type", "option");
+    option.setAttribute("type", "option");
     option.setAttribute("name", "cars"); 
     option.setAttribute("value", i); 
-    option.setAttribute("id", "car" + i); 
-    option.setAttribute("onclick", "myFunction(" + i + ")"); 
+    option.setAttribute("id", "car" + i);
     carTp.innerHTML = rent.cars[i].name; 
-    option.innerHTML = rent.cars[i].name; 
-    
+    option.innerHTML = rent.cars[i].name;
     document.getElementById("dropdown").appendChild(option);
-    //document.getElementById("carSelect").appendChild(carTp);
+    document.getElementById("dropdown").appendChild(carTp);
+}
+
+function myFunction() {
+        var typeIndex = document.getElementById("dropdown").value;
+        document.getElementById("price").innerHTML = rent.cars[typeIndex].price;
+        document.getElementById("available").innerHTML = rent.cars[typeIndex].available;
 }
 
 document.getElementById("reservationForm").onsubmit = function(event) {
@@ -53,6 +53,9 @@ document.getElementById("reservationForm").onsubmit = function(event) {
     if (!document.getElementById("confirmation").checked) { 
         alert("Please agree to conditions and terms.");
         return;
-    } //if(!doc)
-}; //document
-
+        }  else {
+            document.getElementById("confirmation").checked;
+            alert("Thank you, Enjoy your travels!");
+        return;
+    }
+}; 
